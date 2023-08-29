@@ -1,7 +1,9 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+import logging
 
 app = FastAPI()
+logger = logging.getLogger('foo-logger')
 
 @app.get("/")
 
@@ -22,4 +24,4 @@ async def mostra_parametro(parametro_id):
 @app.post("/alunos")
 async def criar_aluno(aluno: Aluno):
     novo_aluno = Aluno(aluno.nome, aluno.matricula, aluno.curso)
-    return {novo_aluno}  
+    return novo_aluno  
