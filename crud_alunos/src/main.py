@@ -6,7 +6,7 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 import logging
 from logging.config import dictConfig
-from src.config import log_config
+from config import log_config
 
 dictConfig(log_config)
 
